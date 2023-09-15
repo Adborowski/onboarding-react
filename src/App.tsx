@@ -1,10 +1,12 @@
 import styles from './App.module.scss'
 import './globals.css'
-import { useState, useEffect } from 'react'
-// import Question from './components/question/question'
+import { useState, useEffect, useContext, createContext } from 'react'
 import { QuestionList } from './components/question/question'
 import TestControls from './components/test-controls/test-controls'
 import ColorPicker from './components/color-picker/color-picker'
+
+// @ts-ignore
+import ColorContext from './context/ColorContext.tsx'
 
 // each time the app is re-rendered, a random AB Test config id is chosen, out of three:
 // conf_a - has question descriptions. See 'question-description.tsx' for a list of descriptions (not all questions have one for this test)
@@ -19,7 +21,7 @@ const createComponentQuestion = (component: any, title: string) => {
    const newQuestion: any = {
       group_id: 'component_question',
       group_title: '',
-      title: 'COMPONENT QUESTION TEST',
+      title: title,
       subtitle: 'aaa',
       continue: false,
       confirm: false,
@@ -52,6 +54,10 @@ const App = () => {
    const [questionsData, setQuestionsData] = useState<any[]>()
    const [originalQuestionsData, setOriginalQuestionsData] = useState<any[]>()
    const [testId, setTestId] = useState<string>('conf_default')
+
+   // default background color (for messing around with the color picker)
+   const [color, setColor] = useState('#ffffff')
+   const value = { color, setColor }
 
    // we fetch safecap questions from a JSON to have a base of dummy questions
    // they get dummy answers added in the frontend, in question.tsx
@@ -111,13 +117,16 @@ const App = () => {
    }
 
    return (
-      <div className={`${styles.main} ${styles[testId]}`}>
-         <TestControls setTestId={setTestId} testId={testId} />
-         <h1>markets.com</h1>
-         <h2>{testId}</h2>
-         <QuestionList questionsData={questionsData} testId={testId} />
-         {/* {questionsData?.length} */}
-      </div>
+      //@ts-ignore
+      <ColorContext.Provider value={value}>
+         <div style={{ backgroundColor: color }} className={`${styles.main} ${styles[testId]}`}>
+            <TestControls setTestId={setTestId} testId={testId} />
+            <h1>markets.com</h1>
+            <h2>{testId}</h2>
+            <QuestionList questionsData={questionsData} testId={testId} />
+            {/* {questionsData?.length} */}
+         </div>
+      </ColorContext.Provider>
    )
 }
 
