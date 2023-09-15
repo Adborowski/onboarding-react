@@ -1,5 +1,9 @@
 const ColorPicker = (props: any) => {
-   return <h1>Colors!</h1>
+   return (
+      <div>
+         <input type="color" />
+      </div>
+   )
 }
 
 export default ColorPicker

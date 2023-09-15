@@ -17,59 +17,9 @@ interface Question {
    component: any
 }
 
-// component questions have some dummy data so the renderer will accept them
-// but also a 'component' prop which contains a component
-// that component actually gets displayed instead of a question
-const createComponentQuestion = (component: any, title: string) => {
-   // this is dummy data so the renderer thinks it's a 'real' question
-   const newQuestion: Question = {
-      group_id: 'component_question',
-      group_title: '',
-      title: title,
-      subtitle: 'aaa',
-      continue: false,
-      confirm: false,
-      full_page: true,
-      previous: false,
-      image: 'images/icons/clock.webp',
-      steps: ['trade_kind'],
-      component: component,
-   }
-   return newQuestion
-}
-
-// injects a new question into an existing questionsData
-const injectQuestion = (questionsData: any, questionToInject: Question, index: number) => {
-   console.log({
-      questionsData: questionsData,
-      questionToInject: questionToInject,
-      index: index,
-   })
-
-   const start = index
-   const deleteCount = 0
-
-   if (questionsData.filter((q: any) => q.title === questionToInject.title).length > 0) {
-      // question with that title is already present in questionsData
-      // this is for duplicate prevention
-   } else {
-      // question is new, so add it
-      questionsData.splice(start, deleteCount, questionToInject)
-   }
-
-   console.log('POST INJECTION', questionsData)
-   console.log()
-
-   return questionsData
-}
-
 const Question = (props: any) => {
    const question: Question = props.question
    const testId = props.testId
-
-   useEffect(() => {
-      console.log('new testId', testId)
-   }, [testId])
 
    const answers = [
       { label: 'Answer A', value: 'a', inputType: 'radio' },
@@ -84,47 +34,52 @@ const Question = (props: any) => {
          {/* only in conf_a, we show Question Descriptions */}
          {testId == 'conf_a' && <QuestionDescription questionTitle={question.title} />}
 
-         {answers.map((ans) => {
-            return (
-               <section className={styles.answer}>
-                  <span>{ans.label}</span>
-                  <input name={question.title} type={ans.inputType} />
-               </section>
-            )
-         })}
+         {/* only render answers if a question does not hold a component */}
+         {!question.component &&
+            answers.map((ans) => {
+               return (
+                  <section className={styles.answer}>
+                     <span>{ans.label}</span>
+                     <input name={question.title} type={ans.inputType} />
+                  </section>
+               )
+            })}
+
+         {question.component && question.component}
       </div>
    )
 }
 
 const QuestionList = (props: any) => {
    let questionsData = props.questionsData
-
-   //  let questionsData = props.questionsData
    const testId = props.testId
 
    if (questionsData) {
+      console.log(questionsData)
       // we can write special cases for AB tests which filter or map the questionsData into something else
       // in here, we satisfy the conf_b requirement of 'first three questions only' by using filtering
 
       if (testId == 'conf_b') {
-         let maximumQuestions = 3 // how many questions to render
-         let newQuestions = questionsData.filter((question: any, index: any) => {
-            if (index < maximumQuestions) {
-               return question
+         questionsData = questionsData.filter((q: any, index: any) => {
+            if (index < 3) {
+               return q
             }
          })
-
-         questionsData = newQuestions
       }
+      // // // conf_d adds a color picker question in index 2 of question list
+      // if (testId == 'conf_d') {
+      //    const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
+      //    const isAlreadyPresent = questionsData.filter((q: Question) => {
+      //       return q.title == newQuestion.title
+      //    })
 
-      // conf_d adds a color picker question in index 2 of question list
-      if (testId == 'conf_d') {
-         const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
-         questionsData = injectQuestion(questionsData, newQuestion, 2)
-      }
+      //    console.log('IS IT PRESENT', isAlreadyPresent)
+      //    questionsData = injectQuestion(questionsData, newQuestion, 2)
+      //    console.log(questionsData)
+      // }
 
       let questionElements = questionsData.map((q: any) => {
-         return <Question question={q} testId={testId} />
+         return <Question key={q.title} question={q} testId={testId} />
       })
 
       return <div className={`${styles.questionsList} ${styles[testId]}`}>{questionElements}</div>
