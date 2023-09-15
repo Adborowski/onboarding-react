@@ -1,6 +1,6 @@
 import styles from './question.module.scss'
 import QuestionDescription from './question-description'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 interface Question {
    group_id: string
    title: string
@@ -57,7 +57,7 @@ const QuestionList = (props: any) => {
          })
       }
 
-      let questionElements = questionsData.map((q: any, index: any) => {
+      let questionElements = questionsData.map((q: any) => {
          return <Question question={q} testId={testId} />
       })
 
