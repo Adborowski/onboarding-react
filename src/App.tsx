@@ -3,12 +3,7 @@ import './globals.css'
 import { useState, useEffect } from 'react'
 // import Question from './components/question/question'
 import QuestionList from './components/question/question'
-
-const getTestId = () => {
-   const testIds = ['conf_a', 'conf_b', 'conf_c', 'conf_default']
-   const randomId = Math.floor(Math.random() * testIds.length)
-   return testIds[randomId]
-}
+import TestControls from './components/test-controls/test-controls'
 
 // each time the app is re-rendered, a random AB Test config id is chosen, out of three:
 // conf_a - has question descriptions. See 'question-description.tsx' for a list of descriptions (not all questions have one for this test)
@@ -17,6 +12,13 @@ const getTestId = () => {
 
 const App = () => {
    const [questionsData, setQuestionsData] = useState<[]>()
+   const [testId, setTestId] = useState<string>('conf_default')
+
+   const getTestId = () => {
+      const testIds = ['conf_a', 'conf_b', 'conf_c', 'conf_default']
+      const randomId = Math.floor(Math.random() * testIds.length)
+      return testIds[randomId]
+   }
 
    // we fetch safecap questions from a JSON to have a base of dummy questions
    // they get dummy answers added in the frontend, in question.tsx
@@ -32,10 +34,11 @@ const App = () => {
 
    useEffect(() => {
       console.log('questionsData', questionsData)
+      setTestId(getTestId)
    }, [questionsData])
 
    // pick a random testId
-   const testId = getTestId()
+   //  const testId = getTestId()
 
    // this is just for understanding of the test runner
    const testDescriptions: any = {
@@ -47,6 +50,7 @@ const App = () => {
 
    return (
       <div className={`${styles.main} ${styles[testId]}`}>
+         <TestControls setTestId={setTestId} />
          <h1>markets.com</h1>
          <h2>{testId}</h2>
          <h3>{testDescriptions[testId]}</h3>

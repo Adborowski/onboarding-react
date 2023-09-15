@@ -1,0 +1,22 @@
+.testControls {
+   margin-bottom: 12px;
+   background-color: #fafafa;
+   padding: 12px;
+   border-radius: 6px;
+   button {
+      border: none;
+      margin-right: 3px;
+      padding: 12px;
+      border-radius: 6px;
+      background-color: lightgreen;
+   }
+
+   h1 {
+      font-size: 1.2rem;
+   }
+
+   h2 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+   }
+}
