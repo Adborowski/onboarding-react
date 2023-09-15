@@ -1,6 +1,47 @@
+.questionsList {
+   border: 1px solid red;
+}
+
 .question {
    border: 1px solid black;
    max-width: 300px;
    margin-bottom: 12px;
    padding: 6px;
+
+   .title {
+      margin-bottom: 12px;
+      display: block;
+      font-weight: 600;
+   }
+
+   // only in conf_a
+   .description {
+      background-color: lightblue;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 1rem;
+   }
+}
+
+.answer {
+   display: block;
+   margin-bottom: 6px;
+
+   span {
+      display: inline-block;
+      width: 120px;
+      padding-right: 12px;
+   }
+}
+
+.answer:has(input[type='text']) {
+   margin-top: 12px;
+
+   span {
+      margin-bottom: 3px;
+   }
+
+   input {
+      width: 80%;
+   }
 }

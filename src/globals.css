@@ -4,13 +4,24 @@ body {
    padding: 6px;
    box-sizing: border-box;
    font-family: 'Helvetica';
+   font-size: 14px;
 }
 
 h1,
-h2 {
+h2,
+h3 {
    margin: 0;
 }
 
 h1 {
-   margin-bottom: 12px;
+}
+
+h2 {
+   font-weight: 400;
+}
+
+h3 {
+   font-size: 1rem;
+   font-weight: 100;
+   margin-bottom: 18px;
 }
