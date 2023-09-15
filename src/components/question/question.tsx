@@ -17,7 +17,7 @@ interface Question {
    component: any
 }
 
-const Question = (props: any) => {
+export const Question = (props: any) => {
    const question: Question = props.question
    const testId = props.testId
 
@@ -38,7 +38,7 @@ const Question = (props: any) => {
          {!question.component &&
             answers.map((ans) => {
                return (
-                  <section className={styles.answer}>
+                  <section key={question.title + ans.label} className={styles.answer}>
                      <span>{ans.label}</span>
                      <input name={question.title} type={ans.inputType} />
                   </section>
@@ -50,40 +50,18 @@ const Question = (props: any) => {
    )
 }
 
-const QuestionList = (props: any) => {
+export const QuestionList = (props: any) => {
+   console.log('QuestionList received questionsData', props.questionsData)
    let questionsData = props.questionsData
    const testId = props.testId
 
    if (questionsData) {
       console.log(questionsData)
-      // we can write special cases for AB tests which filter or map the questionsData into something else
-      // in here, we satisfy the conf_b requirement of 'first three questions only' by using filtering
-
-      if (testId == 'conf_b') {
-         questionsData = questionsData.filter((q: any, index: any) => {
-            if (index < 3) {
-               return q
-            }
-         })
-      }
-      // // // conf_d adds a color picker question in index 2 of question list
-      // if (testId == 'conf_d') {
-      //    const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
-      //    const isAlreadyPresent = questionsData.filter((q: Question) => {
-      //       return q.title == newQuestion.title
-      //    })
-
-      //    console.log('IS IT PRESENT', isAlreadyPresent)
-      //    questionsData = injectQuestion(questionsData, newQuestion, 2)
-      //    console.log(questionsData)
-      // }
 
       let questionElements = questionsData.map((q: any) => {
-         return <Question key={q.title} question={q} testId={testId} />
+         return <Question key={q.group_id + q.title} question={q} testId={testId} />
       })
 
       return <div className={`${styles.questionsList} ${styles[testId]}`}>{questionElements}</div>
    }
 }
-
-export default QuestionList
