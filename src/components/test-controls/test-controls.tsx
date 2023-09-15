@@ -13,7 +13,6 @@ const TestControls = (props: any) => {
    }
 
    const testIds = Object.keys(testDescriptions)
-   console.log(testIds)
 
    return (
       <div className={styles.testControls}>

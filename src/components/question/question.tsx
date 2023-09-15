@@ -20,12 +20,12 @@ interface Question {
 // component questions have some dummy data so the renderer will accept them
 // but also a 'component' prop which contains a component
 // that component actually gets displayed instead of a question
-const createComponentQuestion = (component: any) => {
+const createComponentQuestion = (component: any, title: string) => {
    // this is dummy data so the renderer thinks it's a 'real' question
    const newQuestion: Question = {
       group_id: 'component_question',
       group_title: '',
-      title: 'Comp',
+      title: title,
       subtitle: 'aaa',
       continue: false,
       confirm: false,
@@ -39,7 +39,7 @@ const createComponentQuestion = (component: any) => {
 }
 
 // injects a new question into an existing questionsData
-const injectQuestions = (questionsData: any, questionToInject: Question, index: number) => {
+const injectQuestion = (questionsData: any, questionToInject: Question, index: number) => {
    console.log({
       questionsData: questionsData,
       questionToInject: questionToInject,
@@ -48,7 +48,17 @@ const injectQuestions = (questionsData: any, questionToInject: Question, index: 
 
    const start = index
    const deleteCount = 0
-   questionsData = questionsData.splice(start, deleteCount, questionToInject)
+
+   if (questionsData.filter((q: any) => q.title === questionToInject.title).length > 0) {
+      // question with that title is already present in questionsData
+      // this is for duplicate prevention
+   } else {
+      // question is new, so add it
+      questionsData.splice(start, deleteCount, questionToInject)
+   }
+
+   console.log('POST INJECTION', questionsData)
+   console.log()
 
    return questionsData
 }
@@ -87,17 +97,7 @@ const Question = (props: any) => {
 }
 
 const QuestionList = (props: any) => {
-   //  let [questionsData, setQuestionsData] = useState<any>()
-   const questionsData = props.questionsData
-
-   useEffect(() => {
-      console.log('NEW', questionsData)
-   }, [questionsData])
-
-   //  useEffect(() => {
-   //     console.log('START', props)
-   //     setQuestionsData(props.questionsData)
-   //  }, [])
+   let questionsData = props.questionsData
 
    //  let questionsData = props.questionsData
    const testId = props.testId
@@ -108,20 +108,20 @@ const QuestionList = (props: any) => {
 
       if (testId == 'conf_b') {
          let maximumQuestions = 3 // how many questions to render
-         let newQuestionsData = questionsData.filter((question: any, index: any) => {
+         let newQuestions = questionsData.filter((question: any, index: any) => {
             if (index < maximumQuestions) {
                return question
             }
          })
 
-         //  setQuestionsData(newQuestionsData)
+         questionsData = newQuestions
       }
 
       // conf_d adds a color picker question in index 2 of question list
-      // if (testId == 'conf_d') {
-      //    const newQuestion = createComponentQuestion(<ColorPicker />)
-      //    questionsData = injectQuestions(questionsData, newQuestion, 2)
-      // }
+      if (testId == 'conf_d') {
+         const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
+         questionsData = injectQuestion(questionsData, newQuestion, 2)
+      }
 
       let questionElements = questionsData.map((q: any) => {
          return <Question question={q} testId={testId} />
