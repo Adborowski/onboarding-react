@@ -1,7 +1,5 @@
 import styles from './question.module.scss'
 import QuestionDescription from './question-description'
-import ColorPicker from '../color-picker/color-picker'
-import { useEffect, useState } from 'react'
 
 interface Question {
    group_id: string

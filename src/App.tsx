@@ -1,6 +1,6 @@
 import styles from './App.module.scss'
 import './globals.css'
-import { useState, useEffect, useContext, createContext } from 'react'
+import { useState, useEffect } from 'react'
 import { QuestionList } from './components/question/question'
 import TestControls from './components/test-controls/test-controls'
 import ColorPicker from './components/color-picker/color-picker'
