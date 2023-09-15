@@ -1,8 +1,13 @@
 .main {
-   background-color: white;
+   // NOTE - ColorContext overrides CSS background-color for .main
    padding: 6px;
 }
 
 .main.conf_c {
-   background-color: rgb(199, 228, 255) !important;
+   background-color: rgb(35, 43, 51) !important;
+
+   > h1,
+   > h2 {
+      color: white;
+   }
 }

@@ -1,10 +1,5 @@
-.questionsList {
-   max-width: 600px;
-}
-
+// special class for conf_c
 .questionsList.conf_c {
-   max-width: unset;
-
    .question {
       margin: auto;
       margin-bottom: 12px;
@@ -15,11 +10,18 @@
    }
 }
 
+.questionsList {
+   //  border: 1px solid red;
+   max-width: 300px;
+   margin: auto;
+}
+
 .question {
-   border: 1px solid black;
    max-width: 300px;
    margin-bottom: 12px;
-   padding: 6px;
+   background-color: #ffffff;
+   padding: 18px;
+   border-radius: 6px;
 
    .title {
       margin-bottom: 12px;

@@ -4,6 +4,20 @@ body {
    box-sizing: border-box;
    font-family: 'Helvetica';
    font-size: 14px;
+   -ms-overflow-style: none; /* Internet Explorer 10+ */
+   scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+   display: none; /* Safari and Chrome */
+}
+
+button {
+   cursor: pointer;
+
+   &:hover {
+      filter: brightness(0.9);
+   }
 }
 
 h1,

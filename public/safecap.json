@@ -1,356 +1,311 @@
 [
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "trade_kind",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"previous": false,
-		"image": "images\/icons\/clock.webp",
-		"steps": [
-			"trade_kind"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "trading_frequency_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/clock.webp",
-		"steps": [
-			"trading_frequency_feb2022"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "trading_purpose",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/dartboard.webp",
-		"steps": [
-			"trading_purpose"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "EXPERIENCE",
-		"subtitle": "",
-		"continue": false,
-		"confirm": true,
-		"full_page": true,
-		"scroll": false,
-		"image": "images\/icons\/charts.webp",
-		"steps": [
-			"fx_experience",
-			"csb_experience"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "cfd_volume_experience_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/charts.webp",
-		"steps": [
-			"cfd_volume_experience_feb2022"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "education_level",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/star.webp",
-		"steps": [
-			"education_level"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "employment_status",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"previous": true,
-		"image": "images\/icons\/folder.webp",
-		"steps": [
-			"employment_status"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "STUDY_FIELD",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/book.webp",
-		"steps": [
-			"study_field"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "profession",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/brick.webp",
-		"steps": [
-			"profession"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "annual_income",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/coin.webp",
-		"steps": [
-			"annual_income"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "funds_source",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/clipboard.webp",
-		"steps": [
-			"funds_source"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "savings_investments",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/card.webp",
-		"steps": [
-			"savings_investments"
-		]
-	},
-	{
-		"group_id": "group_questionnaire",
-		"group_title": "",
-		"title": "intend_invest",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/rocket.webp",
-		"steps": [
-			"intend_invest"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "stop_loss_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"stop_loss_feb2022"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "cfd_trading_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"cfd_trading_feb2022"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "apple_up_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"apple_up_feb2022"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "google_buy_markets_feb2022",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"google_buy_markets_feb2022"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "trade_leverage",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"trade_leverage"
-		]
-	},
-	{
-		"group_id": "group_quiz",
-		"group_title": "",
-		"title": "risk_appetite",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"image": "images\/icons\/question.png",
-		"steps": [
-			"risk_appetite"
-		]
-	},
-	{
-		"group_id": "personal_information_1",
-		"group_title": "group_personal_info",
-		"title": "YOUR_NAME",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": false,
-		"previous": false,
-		"wrapper_scroll": true,
-		"image": "",
-		"mobile_steps": [
-			"first_name",
-			"last_name"
-		],
-		"desktop_steps": [
-			"first_name",
-			"last_name",
-			"date_of_birth",
-			"phone"
-		]
-	},
-	{
-		"group_id": "personal_information_2",
-		"group_title": "group_personal_info",
-		"title": "DATE_OF_BIRTH",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": false,
-		"image": "",
-		"mobile_steps": [
-			"date_of_birth"
-		]
-	},
-	{
-		"group_id": "personal_information_3",
-		"group_title": "group_personal_info",
-		"title": "phone",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": false,
-		"image": "",
-		"mobile_steps": [
-			"phone"
-		]
-	},
-	{
-		"group_id": "personal_information_4",
-		"group_title": "group_personal_info",
-		"title": "RESIDENCE_ADDRESS",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": false,
-		"wrapper_scroll": true,
-		"image": "",
-		"steps": [
-			"address_lookup"
-		]
-	},
-	{
-		"group_id": "personal_information_5",
-		"group_title": "group_personal_info",
-		"title": "primary_tin",
-		"subtitle": "",
-		"continue": true,
-		"confirm": false,
-		"full_page": false,
-		"scroll": true,
-		"image": "",
-		"steps": [
-			"primary_tin"
-		]
-	},
-	{
-		"group_id": "group_terms_and_conditions",
-		"group_title": "group_terms_and_conditions",
-		"title": "terms_pdfs",
-		"subtitle": "terms_pdfs_subtitle",
-		"continue": false,
-		"confirm": true,
-		"full_page": true,
-		"image": "",
-		"steps": [
-			"terms_pdfs"
-		]
-	},
-	{
-		"group_id": "group_deposit_funds",
-		"group_title": "",
-		"title": "deposit_funds",
-		"subtitle": "",
-		"continue": false,
-		"confirm": false,
-		"full_page": true,
-		"previous": false,
-		"image": "images\/icons\/card.webp",
-		"steps": [
-			"deposit_funds"
-		]
-	}
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "trade_kind",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "previous": false,
+      "image": "images/icons/clock.webp",
+      "steps": ["trade_kind"],
+      "answers": [
+         { "text": "Securities", "input_type": "radio" },
+         { "text": "Bonds", "input_type": "radio" },
+         { "text": "Shares", "input_type": "radio" },
+         { "text": "Futures", "input_type": "radio" },
+         { "text": "Other", "input_type": "text" }
+      ]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "trading_frequency_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/clock.webp",
+      "steps": ["trading_frequency_feb2022"],
+      "answers": [
+         { "text": "Daily", "input_type": "radio" },
+         { "text": "Weekly", "input_type": "radio" },
+         { "text": "Monthly", "input_type": "radio" },
+         { "text": "Yearly", "input_type": "radio" },
+         { "text": "Never", "input_type": "radio" }
+      ]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "trading_purpose",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/dartboard.webp",
+      "steps": ["trading_purpose"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "EXPERIENCE",
+      "subtitle": "",
+      "continue": false,
+      "confirm": true,
+      "full_page": true,
+      "scroll": false,
+      "image": "images/icons/charts.webp",
+      "steps": ["fx_experience", "csb_experience"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "cfd_volume_experience_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/charts.webp",
+      "steps": ["cfd_volume_experience_feb2022"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "education_level",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/star.webp",
+      "steps": ["education_level"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "employment_status",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "previous": true,
+      "image": "images/icons/folder.webp",
+      "steps": ["employment_status"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "STUDY_FIELD",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/book.webp",
+      "steps": ["study_field"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "profession",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/brick.webp",
+      "steps": ["profession"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "annual_income",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/coin.webp",
+      "steps": ["annual_income"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "funds_source",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/clipboard.webp",
+      "steps": ["funds_source"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "savings_investments",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/card.webp",
+      "steps": ["savings_investments"]
+   },
+   {
+      "group_id": "group_questionnaire",
+      "group_title": "",
+      "title": "intend_invest",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/rocket.webp",
+      "steps": ["intend_invest"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "stop_loss_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["stop_loss_feb2022"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "cfd_trading_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["cfd_trading_feb2022"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "apple_up_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["apple_up_feb2022"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "google_buy_markets_feb2022",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["google_buy_markets_feb2022"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "trade_leverage",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["trade_leverage"]
+   },
+   {
+      "group_id": "group_quiz",
+      "group_title": "",
+      "title": "risk_appetite",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "image": "images/icons/question.png",
+      "steps": ["risk_appetite"]
+   },
+   {
+      "group_id": "personal_information_1",
+      "group_title": "group_personal_info",
+      "title": "YOUR_NAME",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": false,
+      "previous": false,
+      "wrapper_scroll": true,
+      "image": "",
+      "mobile_steps": ["first_name", "last_name"],
+      "desktop_steps": ["first_name", "last_name", "date_of_birth", "phone"]
+   },
+   {
+      "group_id": "personal_information_2",
+      "group_title": "group_personal_info",
+      "title": "DATE_OF_BIRTH",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": false,
+      "image": "",
+      "mobile_steps": ["date_of_birth"]
+   },
+   {
+      "group_id": "personal_information_3",
+      "group_title": "group_personal_info",
+      "title": "phone",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": false,
+      "image": "",
+      "mobile_steps": ["phone"]
+   },
+   {
+      "group_id": "personal_information_4",
+      "group_title": "group_personal_info",
+      "title": "RESIDENCE_ADDRESS",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": false,
+      "wrapper_scroll": true,
+      "image": "",
+      "steps": ["address_lookup"]
+   },
+   {
+      "group_id": "personal_information_5",
+      "group_title": "group_personal_info",
+      "title": "primary_tin",
+      "subtitle": "",
+      "continue": true,
+      "confirm": false,
+      "full_page": false,
+      "scroll": true,
+      "image": "",
+      "steps": ["primary_tin"]
+   },
+   {
+      "group_id": "group_terms_and_conditions",
+      "group_title": "group_terms_and_conditions",
+      "title": "terms_pdfs",
+      "subtitle": "terms_pdfs_subtitle",
+      "continue": false,
+      "confirm": true,
+      "full_page": true,
+      "image": "",
+      "steps": ["terms_pdfs"]
+   },
+   {
+      "group_id": "group_deposit_funds",
+      "group_title": "",
+      "title": "deposit_funds",
+      "subtitle": "",
+      "continue": false,
+      "confirm": false,
+      "full_page": true,
+      "previous": false,
+      "image": "images/icons/card.webp",
+      "steps": ["deposit_funds"]
+   }
 ]

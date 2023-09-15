@@ -1,4 +1,5 @@
 import styles from './test-controls.module.scss'
+import LanguagePicker from '../language-picker/language-picker'
 
 const TestControls = (props: any) => {
    const { setTestId, testId } = props
@@ -12,24 +13,30 @@ const TestControls = (props: any) => {
       conf_default: 'no changes',
    }
 
+   const getRandomTest = () => {
+      const randomIndex = Math.floor(Math.random() * testIds.length)
+      setTestId(testIds[randomIndex])
+   }
+
    const testIds = Object.keys(testDescriptions)
 
    return (
       <div className={styles.testControls}>
+         <LanguagePicker />
          <h1>Available AB Tests</h1>
-         <h2>Refresh page to randomize test</h2>
-         <h3>
+         <h2>
             {testId} - {testDescriptions[testId]}
-         </h3>
-         {testIds.map((testId) => {
+         </h2>
+         <button onClick={getRandomTest}>Randomize</button>
+         {testIds.map((id) => {
             return (
                <button
-                  key={testId}
+                  key={id}
                   onClick={() => {
-                     setTestId(testId)
+                     setTestId(id)
                   }}
                >
-                  {testId}
+                  {id}
                </button>
             )
          })}
