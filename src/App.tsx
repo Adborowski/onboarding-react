@@ -73,6 +73,7 @@ const App = () => {
 
    useEffect(() => {
       console.log('%cNew testId', 'color: orange', testId)
+      setColor('white')
       processQuestionsData(testId)
    }, [testId])
 
@@ -104,8 +105,8 @@ const App = () => {
       }
 
       // conf_d adds a color picker question in index 2 of question list
-      if (testId == 'conf_d' && questionsData) {
-         let newQuestionsData: any[] = questionsData.slice() // clone by value
+      if (testId == 'conf_d' && questionsData && originalQuestionsData) {
+         let newQuestionsData: any[] = originalQuestionsData.slice() // clone by value
          const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
          newQuestionsData = injectQuestion(newQuestionsData, newQuestion, 2)
          setQuestionsData(newQuestionsData)
@@ -119,7 +120,10 @@ const App = () => {
    return (
       //@ts-ignore
       <ColorContext.Provider value={value}>
-         <div style={{ backgroundColor: color }} className={`${styles.main} ${styles[testId]}`}>
+         <div
+            style={{ backgroundColor: value.color }}
+            className={`${styles.main} ${styles[testId]}`}
+         >
             <TestControls setTestId={setTestId} testId={testId} />
             <h1>markets.com</h1>
             <h2>{testId}</h2>
