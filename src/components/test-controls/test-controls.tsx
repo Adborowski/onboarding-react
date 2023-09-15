@@ -6,10 +6,10 @@ const TestControls = (props: any) => {
 
    // this is just for understanding of the test runner
    const testDescriptions: any = {
-      conf_a: 'has question descriptions on some questions',
-      conf_b: 'only shows first 3 questions',
-      conf_c: 'has alternate styling',
-      conf_d: 'has a color picker between questions',
+      conf_a: 'question descriptions on questions 2, 4, 6',
+      conf_b: 'show only first 3 questions',
+      conf_c: 'alternative styling',
+      conf_d: 'color picker as question 3',
       conf_default: 'no changes',
    }
 
@@ -29,8 +29,13 @@ const TestControls = (props: any) => {
          </h2>
          <button onClick={getRandomTest}>Randomize</button>
          {testIds.map((id) => {
+            let activeClass = ''
+            if (id == testId) {
+               activeClass = styles.active
+            }
             return (
                <button
+                  className={activeClass}
                   key={id}
                   onClick={() => {
                      setTestId(id)

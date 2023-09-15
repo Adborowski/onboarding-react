@@ -1,3 +1,8 @@
+:root {
+   --color-1: rgb(156, 156, 156);
+   --color-2: rgb(128, 85, 179);
+}
+
 html,
 body {
    margin: 0;

@@ -1,0 +1,14 @@
+.languagePicker {
+   display: block;
+   margin-bottom: 12px;
+
+   button {
+      padding: 12px;
+      margin-bottom: 0;
+      background-color: var(--color-1);
+   }
+
+   button.active {
+      background-color: var(--color-2);
+   }
+}

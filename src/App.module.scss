@@ -11,3 +11,19 @@
       color: white;
    }
 }
+
+.logo {
+   //  border: 1px solid red;
+   height: 24px;
+   width: 200px;
+   position: absolute;
+   top: 12px;
+   right: 18px;
+   background-image: url('/logo.svg');
+   background-repeat: no-repeat;
+   background-position: center right;
+
+   @media (max-width: 500px) {
+      background-size: 60%;
+   }
+}

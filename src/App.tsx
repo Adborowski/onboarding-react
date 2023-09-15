@@ -128,6 +128,7 @@ const App = () => {
       <LanguageContext.Provider value={{ language, setLanguage }}>
          <ColorContext.Provider value={{ color, setColor }}>
             <div style={{ backgroundColor: color }} className={`${styles.main} ${styles[testId]}`}>
+               <div className={styles.logo} />
                <TestControls setTestId={setTestId} testId={testId} />
                <QuestionList questionsData={questionsData} testId={testId} />
             </div>
