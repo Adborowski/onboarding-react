@@ -1,5 +1,18 @@
 .questionsList {
-   border: 1px solid red;
+   max-width: 600px;
+}
+
+.questionsList.conf_c {
+   max-width: unset;
+
+   .question {
+      margin: auto;
+      margin-bottom: 12px;
+      border: 0;
+      background-color: rgb(255, 255, 255);
+      padding: 18px;
+      border-radius: 6px;
+   }
 }
 
 .question {

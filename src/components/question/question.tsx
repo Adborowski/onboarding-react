@@ -21,9 +21,12 @@ const Question = (props: any) => {
       { label: 'Other', value: 'a', inputType: 'text' },
    ]
    return (
-      <div className={styles.question}>
+      <div className={`${styles.question} ${styles[testId]}`}>
          <span className={styles.title}>{question.title}</span>
+
+         {/* only in conf_a, we show Question Descriptions */}
          {testId == 'conf_a' && <QuestionDescription questionTitle={question.title} />}
+
          {answers.map((ans, index) => {
             return (
                <section className={styles.answer}>
@@ -58,7 +61,7 @@ const QuestionList = (props: any) => {
          return <Question question={q} testId={testId} />
       })
 
-      return questionElements
+      return <div className={`${styles.questionsList} ${styles[testId]}`}>{questionElements}</div>
    }
 }
 

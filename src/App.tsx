@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import QuestionList from './components/question/question'
 
 const getTestId = () => {
-   const testIds = ['conf_a', 'conf_b', 'conf_c']
+   const testIds = ['conf_a', 'conf_b', 'conf_c', 'conf_default']
    const randomId = Math.floor(Math.random() * testIds.length)
    return testIds[randomId]
 }
@@ -18,6 +18,8 @@ const getTestId = () => {
 const App = () => {
    const [questionsData, setQuestionsData] = useState<[]>()
 
+   // we fetch safecap questions from a JSON to have a base of dummy questions
+   // they get dummy answers added in the frontend, in question.tsx
    useEffect(() => {
       fetch(`safecap.json`)
          .then((r) => r.json())
@@ -32,31 +34,24 @@ const App = () => {
       console.log('questionsData', questionsData)
    }, [questionsData])
 
+   // pick a random testId
    const testId = getTestId()
 
+   // this is just for understanding of the test runner
    const testDescriptions: any = {
       conf_a: 'has question descriptions on some questions',
       conf_b: 'only shows first 3 questions',
       conf_c: 'has alternate styling',
+      conf_default: 'no changes',
    }
 
-   let maximumQuestions = testId == 'conf_b' ? 3 : 500
-
    return (
-      <>
+      <div className={`${styles.main} ${styles[testId]}`}>
          <h1>markets.com</h1>
          <h2>{testId}</h2>
          <h3>{testDescriptions[testId]}</h3>
          <QuestionList questionsData={questionsData} testId={testId} />
-         <article className={`${styles.questionsList} ${testId}`}>
-            {/* {questionsData &&
-               questionsData.map((q: any, index) => {
-                  if (index < maximumQuestions) {
-                     return <Question question={q} testId={testId} />
-                  }
-               })} */}
-         </article>
-      </>
+      </div>
    )
 }
 
