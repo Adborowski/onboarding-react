@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 // import Question from './components/question/question'
 import QuestionList from './components/question/question'
 import TestControls from './components/test-controls/test-controls'
+import ColorPicker from './components/color-picker/color-picker'
 
 // each time the app is re-rendered, a random AB Test config id is chosen, out of three:
 // conf_a - has question descriptions. See 'question-description.tsx' for a list of descriptions (not all questions have one for this test)
@@ -37,23 +38,11 @@ const App = () => {
       setTestId(getTestId)
    }, [questionsData])
 
-   // pick a random testId
-   //  const testId = getTestId()
-
-   // this is just for understanding of the test runner
-   const testDescriptions: any = {
-      conf_a: 'has question descriptions on some questions',
-      conf_b: 'only shows first 3 questions',
-      conf_c: 'has alternate styling',
-      conf_default: 'no changes',
-   }
-
    return (
       <div className={`${styles.main} ${styles[testId]}`}>
-         <TestControls setTestId={setTestId} />
+         <TestControls setTestId={setTestId} testId={testId} />
          <h1>markets.com</h1>
          <h2>{testId}</h2>
-         <h3>{testDescriptions[testId]}</h3>
          <QuestionList questionsData={questionsData} testId={testId} />
       </div>
    )
