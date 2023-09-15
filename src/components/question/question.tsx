@@ -27,7 +27,7 @@ const Question = (props: any) => {
          {/* only in conf_a, we show Question Descriptions */}
          {testId == 'conf_a' && <QuestionDescription questionTitle={question.title} />}
 
-         {answers.map((ans, index) => {
+         {answers.map((ans) => {
             return (
                <section className={styles.answer}>
                   <span>{ans.label}</span>
