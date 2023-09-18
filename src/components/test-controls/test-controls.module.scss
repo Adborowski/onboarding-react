@@ -4,10 +4,11 @@
    padding: 12px;
    border-radius: 6px;
    max-width: 600px;
+   position: relative;
 
    button {
       border: none;
-      margin-right: 3px;
+      margin-left: 3px;
       margin-bottom: 3px;
       padding: 12px;
       border-radius: 6px;
@@ -20,13 +21,15 @@
    }
 
    h1 {
-      font-size: 1.2rem;
-      color: black;
+      font-size: 0.8rem;
+      font-weight: 400;
+      // color: black;
    }
 
    h2 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       margin-bottom: 12px;
       font-weight: 400;
+      margin-top: 3px;
    }
 }

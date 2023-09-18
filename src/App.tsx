@@ -13,6 +13,7 @@ import LanguageContext from './context/LanguageContext.tsx'
 // conf_b - only shows the first 3 questions
 // conf_c - changes the layout and styling of all questions
 // conf_d - has a component-question holding a Color Picker at index 2
+// conf_e - has basic translation logic
 
 // component questions have some dummy data so the renderer will accept them
 // but also a 'component' prop which contains a component
@@ -65,7 +66,6 @@ const App = () => {
    // they get dummy answers added in the frontend, in question.tsx
 
    useEffect(() => {
-      console.log('%cREDRAW', 'color: pink')
       resetData()
    }, [])
 
@@ -75,10 +75,11 @@ const App = () => {
 
    useEffect(() => {
       console.log('%cNew testId', 'color: orange', testId)
-      setColor('#e3e3e3')
+      setColor('#e3e3e3') // reset color with Context
       processQuestionsData(testId)
    }, [testId])
 
+   // get original questionsData from a .json file and set it as active
    const resetData = async function () {
       console.log('resetting data...')
       fetch(`safecap.json`)
@@ -92,7 +93,6 @@ const App = () => {
    }
 
    // apply modifications based on AB-test requirements
-   //
    const processQuestionsData = (testId: string) => {
       // conf_b limits the number of questions shown to 3
       if (testId == 'conf_b' && questionsData && originalQuestionsData) {
@@ -110,8 +110,6 @@ const App = () => {
 
       // conf_d adds a color picker question in index 2 of question list
       if (testId == 'conf_d' && questionsData && originalQuestionsData) {
-         // TODO refactor this into a questionsDataHandler function
-         // keep minimal code in app.tsx, just references to imports
          let newQuestionsData: any[] = originalQuestionsData.slice() // clone by value
          const newQuestion = createComponentQuestion(<ColorPicker />, 'Color Picker')
          newQuestionsData = injectQuestion(newQuestionsData, newQuestion, 2)
@@ -119,7 +117,7 @@ const App = () => {
          return
       }
 
-      // 'if' statements contain RETURN, so if the function got here, just show raw data
+      // 'if' statements contain RETURN, so if the function got here, just show original data
       resetData()
    }
 

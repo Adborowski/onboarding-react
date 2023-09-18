@@ -4,12 +4,13 @@ import LanguagePicker from '../language-picker/language-picker'
 const TestControls = (props: any) => {
    const { setTestId, testId } = props
 
-   // this is just for understanding of the test runner
+   // available tests
    const testDescriptions: any = {
       conf_a: 'question descriptions on questions 2, 4, 6',
       conf_b: 'show only first 3 questions',
       conf_c: 'alternative styling',
       conf_d: 'color picker as question 3',
+      conf_e: 'translations',
       conf_default: 'no changes',
    }
 
@@ -22,11 +23,11 @@ const TestControls = (props: any) => {
 
    return (
       <div className={styles.testControls}>
-         <LanguagePicker />
-         <h1>Available AB Tests</h1>
+         <h1>Active AB Test</h1>
          <h2>
             {testId} - {testDescriptions[testId]}
          </h2>
+
          <button onClick={getRandomTest}>Randomize</button>
          {testIds.map((id) => {
             let activeClass = ''
@@ -45,6 +46,7 @@ const TestControls = (props: any) => {
                </button>
             )
          })}
+         {testId == 'conf_e' ? <LanguagePicker /> : null}
       </div>
    )
 }

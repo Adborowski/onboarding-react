@@ -4,8 +4,7 @@
 }
 
 .main.conf_c {
-   background-color: rgb(35, 43, 51) !important;
-
+   background-color: var(--color-2) !important;
    > h1,
    > h2 {
       color: white;
@@ -14,16 +13,21 @@
 
 .logo {
    //  border: 1px solid red;
-   height: 24px;
-   width: 200px;
-   position: absolute;
-   top: 12px;
-   right: 18px;
+   height: 18px;
+   padding: 12px;
+   width: 120px;
+   position: fixed;
+   bottom: 0;
+   right: 0;
    background-image: url('/logo.svg');
    background-repeat: no-repeat;
-   background-position: center right;
+   background-position: center;
+   background-size: 75%;
+   z-index: 1;
 
-   @media (max-width: 500px) {
-      background-size: 60%;
+   @media (max-width: 800px) {
+      height: 12px;
+      padding: 6px;
+      width: 90px;
    }
 }
